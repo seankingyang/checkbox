@@ -51,12 +51,11 @@ else:
         'Jinja2 >= 2.7',
         'xlsxwriter',
         'tqdm',
-        'importlib_metadata',
-    ]
+    ] + (["importlib_metadata"] if sys.version_info < (3, 8) else [])
 
 setup(
     name="checkbox-ng",
-    version="2.7",
+    version="2.8",
     url="https://launchpad.net/checkbox-ng/",
     packages=find_packages(),
     author="Zygmunt Krynicki",
